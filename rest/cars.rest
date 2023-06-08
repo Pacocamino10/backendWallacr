@@ -1,0 +1,59 @@
+
+@hostname = http://localhost
+@port = 3001
+@host = {{hostname}}:{{port}}
+
+
+### 
+# getAllTask
+
+GET {{host}}/api/cars
+
+### 
+# getTaskById
+# @param :taskId
+
+GET {{host}}/api/cars/6474bdf3ecaa04159dd9fef1
+
+
+###
+# createTask
+# @HTTP_HEADER x-auth-token: `jwt_token` (boardOwner)
+# @body title
+# @body description (optional)
+# @param :boardId
+# @param :columnId
+
+POST {{host}}/api/cars
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyNSIsIl9pZCI6IjY0NzRmMDZiMGNjN2E0YWNmMTQ2ODFiMSIsImlhdCI6MTY4NTM4NTMyM30.icXjca9Dhn_DVDf2KXG4lmAd9wCARNWulNyb0qR7_r4
+
+{
+  "title": "esta es nueva"
+}
+
+###
+# updateTask
+# @HTTP_HEADER x-auth-token: `jwt_token`
+# @param :boardId
+# @param :columnId
+# @param :taskId
+# @body title
+# @body description (optional)
+
+PUT {{host}}/api/cars/6474ef9e0cc7a4acf14681a8
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyNSIsIl9pZCI6IjY0NzRmMDZiMGNjN2E0YWNmMTQ2ODFiMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NTM4NTQzMH0.oHM_93eKbWNjXKu7AQEKi7rqejhwElq4lqutPJZXpS0
+
+{
+  "title": "updated"
+}
+
+### 
+# deleteTask
+# @HTTP_HEADER x-auth-token: `jwt_token`
+# @param :taskId
+
+DELETE {{host}}/api/cars/6474f0860cc7a4acf14681b3
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyNSIsIl9pZCI6IjY0NzRmMDZiMGNjN2E0YWNmMTQ2ODFiMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4NTM4NTQzMH0.oHM_93eKbWNjXKu7AQEKi7rqejhwElq4lqutPJZXpS0

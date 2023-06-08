@@ -1,0 +1,4 @@
+{
+  "db": "MONGO_URI",
+  "privateKeyJWT_notes": "jwt_privateKey"
+}
